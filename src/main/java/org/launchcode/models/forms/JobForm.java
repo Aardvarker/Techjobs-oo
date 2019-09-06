@@ -28,6 +28,11 @@ public class JobForm {
         Don't forget to add getters and setters
      */
 
+
+    private int locationId;
+    private int coreCompetenciesId;
+    private int positionTypeId;
+
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
     private ArrayList<CoreCompetency> coreCompetencies;
@@ -42,6 +47,10 @@ public class JobForm {
         */
 
         employers = jobData.getEmployers().findAll();
+        locations = jobData.getLocations().findAll();
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+        positionTypes = jobData.getPositionTypes().findAll();
+
 
     }
 
@@ -61,6 +70,7 @@ public class JobForm {
         this.employerId = employerId;
     }
 
+
     public ArrayList<Employer> getEmployers() {
         return employers;
     }
@@ -72,13 +82,30 @@ public class JobForm {
     public ArrayList<Location> getLocations() {
         return locations;
     }
+    public int getLocationId() {
+        return locationId;
+    }
 
-    public void setLocations(ArrayList<Location> locations) {
-        this.locations = locations;
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public void setCoreCompetenciesId(int coreCompetenciesId) {
+        this.coreCompetenciesId = coreCompetenciesId;
+    }
+
+    public void setPositionTypeId(int positionTypeId) {
+        this.positionTypeId = positionTypeId;
+    }
+
+    public void setLocations(ArrayList<Location> locations) { this.locations = locations;
     }
 
     public ArrayList<CoreCompetency> getCoreCompetencies() {
         return coreCompetencies;
+    }
+    public int getCoreCompetenciesId() {
+        return coreCompetenciesId;
     }
 
     public void setCoreCompetencies(ArrayList<CoreCompetency> coreCompetencies) {
@@ -91,5 +118,8 @@ public class JobForm {
 
     public void setPositionTypes(ArrayList<PositionType> positionTypes) {
         this.positionTypes = positionTypes;
+    }
+    public int getPositionTypeId() {
+        return positionTypeId;
     }
 }
